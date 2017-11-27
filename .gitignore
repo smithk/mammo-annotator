@@ -1,0 +1,16 @@
+
+Data/annotations/
+
+*.csv
+
+Data/
+
+MammoTest/
+
+TestData/
+
+backup/
+
+csvsheets/
+
+*.asv

@@ -1,0 +1,98 @@
+
+
+MammoAI annotator todo list
+
+* "Next Case" - checks: radiologist gave name, prior images have been marked, "no visible tumor" was clicked.
+* hotkeys for annotation type/number (1,2,3,...0)	
+* improve help button
+* save contours as file?
+* history, add a mode to go back and look at skipped annotations
+* email the annotations after the session
+* what happens if you annotate outside of the image?
+* 4 views (MLO, CC, LM, ML) LM and ML are clinical only
+* annotations must be deleted if you switch views
+
+
+✓ more intelligent initial zoom
+✓ if there are multiple images of the same breast, use the most recent (should not be necessary)
+✓ generate masks (how to represent dot?)
+✓ annotation for location in the prior image can be a dot or freehand
+✓ save both the masks and the contours (polygons, dots)
+✓ up to 5 tumor annotations, each a different color
+✓ buttons (annotation is complete, skip this annotation)
+✓ Allow a comment field ("This image has a problem")
+✓ Free text for annotator name
+✓ load all images, select images to view, open them intelligently (side with cancer, if no prior exists, other current)
+✓ contrast adjust (windows)
+✓ get contrast from dicominfo (a.WindowCenter, a.WindowWidth)
+✓ zooming, initial zoom
+✓ figure takes whole screen
+✓ zoom = 'period' and 'hyphen'
+✓ floating text 
+
+
+○ file copy script
+○ just 1 annotation window
+○ optional linkaxes
+○ Switch breasts -> allow the prior to switch with other current breast? If no prior exists, show other current breast?
+○  make an executable?
+○  linkaxis
+○  allow for overlapping masks
+
+
+
+image order:
+1. LpriorMLO 
+2. LcurrMLO 
+3. LpriorCC 
+4. LcurrCC 
+5. RpriorMLO 
+6. RcurrMLO 
+7. RpriorCC 
+8. RcurrCC
+
+data field order:
+1. studyPersonaID
+2. A030DiaDat 
+3. studydate
+4. imagelaterality
+5. viewposition
+6. x_examination_type
+7. x_round
+8. sourcefile
+9. A030ICDO3Kod
+10. A030Sida    (1=right, 2=left)
+11. A030Screening
+12. A090InvCa
+13. A090SnomedInv2
+14. A090SnomedTis
+15. A090AntInva
+16. A090MultiFok2
+17. A090HistoTumStl
+18. A090UtbTis
+
+19. contrastCenter
+20. contrastWidth
+21. annotatorName
+22. annotationTime
+23. comments
+24. maskfile
+25. contourfile
+26. tumorfound
+27. annotationStatus
+
+
+handles.thandles(1) = View 1 TOP (Prior MLO)
+handles.thandles(2) = View 2 BOTTOM (description)
+
+handles.statusList & annotationStatus: 0 = not annotated, 1 = annotated, 2 = unsure
+
+handles.thisSession = [inds; statuses]
+
+
+Annotation colors
+1. [1 .8 0]  [.87 .8 .54]
+2. [.26 .96 .27] [.57 .77 .57]
+3. [.29 .67 1] [.55 .69 .81]
+4. [.98 .21 .18] [.88 .6 .59]
+5. [1 .25 1] [.83 .59 .83]
