@@ -233,6 +233,11 @@ function handles = loadNextCase(handles)
 % handles.n = find(handles.statusList ~= 1, 1, 'first');
 handles.n = find(handles.statusList == 0, 1, 'first');
 
+
+% karin's list of cases to revisit
+revisit_list = [318 374 378 398 401 510 657 748 904 1193 1245 1522 1566 1675];
+
+
 % get id from index n
 handles.c.id = handles.idList{handles.n};
 str = sprintf('StudyPersonID: %s', handles.c.id);
