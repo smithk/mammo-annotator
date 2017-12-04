@@ -105,16 +105,15 @@ set(handles.hFig4, 'Name', 'View 4');
 
 % set initial parameters
 if ~isequal(handles.computer_name, 'DESKTOP-24IIS50')
-%     handles.datafile = 'C:\Users\mammoai\Desktop\Annotator\test_small.mat';
-%     handles.datafile = 'C:\Users\mammoai\Desktop\Annotator\Images_for_annotation_20170602_semicolon.mat';
-    handles.datafile = 'C:\Users\mammoai\Desktop\Annotator\Data\images_for_annotation_20170621.mat';
+    handles.datafile = 'C:\Users\mammoai\Desktop\Annotator\Data\images_to_revisit_20171205.mat';
+%     handles.datafile = 'C:\Users\mammoai\Desktop\Annotator\Data\images_for_annotation_20170621.mat';
     handles.datapath = 'C:\Users\mammoai\Desktop\Annotator\Data\annotations\';
-    handles.csv_out = 'C:\Users\mammoai\Desktop\Annotator\annotations.csv';
+%     handles.csv_out = 'C:\Users\mammoai\Desktop\Annotator\annotations.csv';
 else
-%     handles.datafile = 'D:\Dropbox\Documents-Kevin\Projects\MammoAI\Annotator\test_small.mat';
-    handles.datafile = 'D:\Dropbox\Documents-Kevin\Projects\MammoAI\Annotator\Data\images_for_annotation_20170621.mat';
-    handles.datapath = 'D:\Dropbox\Documents-Kevin\Projects\MammoAI\Annotator\Data\annotations\';
-    handles.csv_out = 'D:\Dropbox\Documents-Kevin\Projects\MammoAI\Annotator\annotations.csv';
+    handles.datafile = 'D:\ksmith\mammo-annotator\Data\images_to_revisit_20171205.mat';
+%     handles.datafile = 'D:\ksmith\mammo-annotator\Data\images_for_annotation_20170621.mat';
+    handles.datapath = 'D:\ksmith\mammo-annotator\Data\annotations\';
+%     handles.csv_out = 'D:\ksmith\mammo-annotator\annotations.csv';
 end
 if ~exist(handles.datapath, 'dir')
     mkdir(handles.datapath);
