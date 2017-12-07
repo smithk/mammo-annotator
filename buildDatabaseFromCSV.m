@@ -5,11 +5,13 @@ thiscomp = getenv('computername');
 data = csvimport(filein, 'delimiter', ';');
 [pth name ext] = fileparts(filein);
 
-if isequal(thiscomp, 'DESKTOP-24IIS50')
-    fileout = fullfile('D:\Dropbox\Documents-Kevin\Projects\MammoAI\Annotator\', [name '.mat']);
-else
-    fileout = fullfile('C:\Users\mammoai\Desktop\Annotator\Data\', [name '.mat']);
-end
+fileout = fullfile([pth '\'], [name '.mat']);
+
+% if isequal(thiscomp, 'DESKTOP-24IIS50')
+%     fileout = fullfile([pth '\'], [name '.mat']);
+% else
+%     fileout = fullfile('C:\Users\mammoai\Desktop\Annotator\Data\', [name '.mat']);
+% end
 
 % dataFields = {'studyPersonaID', 'A030DiaDat', 'studydate', 'viewposition', ...
 %     'x_examination_type', 'x_round', 'sourcefile', 'A030ICDO3Kod', 'A030Sida', ...
@@ -33,20 +35,20 @@ for i=1:size(data,1)
                 
             case 8
                 % replace the file location with the correct one!
-                if isequal(thiscomp, 'DESKTOP-24IIS50')
-                    [pth name ext] = fileparts(data{i,j});
-                    C = strsplit(pth,'/');
-                    newpath = ['D:\Dropbox\Documents-Kevin\Projects\MammoAI\Annotator\Data' '\' C{end} '\'];
-                    % strjoin
-                    data{i,j} = fullfile(newpath, [name ext]);
-                else
+%                 if isequal(thiscomp, 'DESKTOP-24IIS50')
+%                     [pth name ext] = fileparts(data{i,j});
+%                     C = strsplit(pth,'/');
+%                     newpath = ['D:\Dropbox\Documents-Kevin\Projects\MammoAI\Annotator\Data' '\' C{end} '\'];
+%                     % strjoin
+%                     data{i,j} = fullfile(newpath, [name ext]);
+%                 else
 %                     [pth name ext] = fileparts(data{i,j});
 %                     filename = data{i,j};
                     if startsWith(data{i,j}(1), 'G')
                         data{i,j}(1) = 'I';
                     end
                         
-                end
+%                 end
                 
                     
                 

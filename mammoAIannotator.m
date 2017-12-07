@@ -105,16 +105,22 @@ set(handles.hFig4, 'Name', 'View 4');
 
 % set initial parameters
 if ~isequal(handles.computer_name, 'DESKTOP-24IIS50')
-    handles.datafile = 'C:\Users\mammoai\Desktop\Annotator\Data\images_to_revisit_20171205.mat';
-%     handles.datafile = 'C:\Users\mammoai\Desktop\Annotator\Data\images_for_annotation_20170621.mat';
-    handles.datapath = 'C:\Users\mammoai\Desktop\Annotator\Data\annotations\';
-%     handles.csv_out = 'C:\Users\mammoai\Desktop\Annotator\annotations.csv';
+    handles.datafile = 'C:\Users\mammoai\Desktop\mammo-annotator\Data\Images_for_annotation_20171207\Updated_images_for_annotations_state4_newfilepaths_20171205.mat';
+    handles.datapath = 'C:\Users\mammoai\Desktop\mammo-annotator\Data\Images_for_annotation_20171207\annotations\';
 else
-    handles.datafile = 'D:\ksmith\mammo-annotator\Data\images_to_revisit_20171205.mat';
-%     handles.datafile = 'D:\ksmith\mammo-annotator\Data\images_for_annotation_20170621.mat';
-    handles.datapath = 'D:\ksmith\mammo-annotator\Data\annotations\';
-%     handles.csv_out = 'D:\ksmith\mammo-annotator\annotations.csv';
+    handles.datafile = 'D:\ksmith\mammo-annotator\Data\Images_for_annotation_20171207\Updated_images_for_annotations_state4_newfilepaths_20171205.mat';
+    handles.datapath = 'D:\ksmith\mammo-annotator\Data\Images_for_annotation_20171207\annotations\';
 end
+
+% % set initial parameters
+% if ~isequal(handles.computer_name, 'DESKTOP-24IIS50')
+%     handles.datafile = 'C:\Users\mammoai\Desktop\mammo-annotator\Data\images_to_revisit_20171205.mat';
+%     handles.datapath = 'C:\Users\mammoai\Desktop\mammo-annotator\Data\annotations\';
+% else
+%     handles.datafile = 'D:\ksmith\mammo-annotator\Data\images_to_revisit_20171205.mat';
+%     handles.datapath = 'D:\ksmith\mammo-annotator\Data\annotations\';
+% end
+
 if ~exist(handles.datapath, 'dir')
     mkdir(handles.datapath);
 end
@@ -234,7 +240,8 @@ handles.n = find(handles.statusList == 0, 1, 'first');
 
 
 % karin's list of cases to revisit
-revisit_list = [318 374 378 398 401 510 657 748 904 1193 1245 1522 1566 1675];
+%revisit_list = [318 374 378 398 401 510 657 748 904 1193 1245 1522 1566 1675];
+
 
 
 % get id from index n
